@@ -1,0 +1,5 @@
+name = Advanced Forum Bootstrap
+description = Bootstrap Advanced Forum Styles
+dependencies[] = advanced_forum
+core = 7.x
+configure = admin/config/content/advanced-forum
