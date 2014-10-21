@@ -29,6 +29,7 @@
     <?php print $forums; ?>
 
     <?php if (!empty($forum_legend) || !empty($forum_tools)): ?>
+      <hr/>
       <div class="well">
         <div class="row">
           <div class="col-md-6">
