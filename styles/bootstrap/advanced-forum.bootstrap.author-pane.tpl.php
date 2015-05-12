@@ -16,114 +16,84 @@
   }
 ?>
 
-<div class="author-pane">
- <div class="author-pane-inner">
-    <?php /* General section */ ?>
-    <div class="author-pane-section author-pane-general">
-      <?php /* Account name */ ?>
-      <div class="author-pane-line author-name">
+<div class="panel panel-default">
+    <div class="panel-heading text-center">
         <?php print $account_name; ?>
-      </div>
-
-      <?php /* User picture / avatar (has div in variable) */ ?>
-      <?php if (!empty($picture)): ?>
-        <?php print $picture; ?>
-      <?php endif; ?>
-
-      <?php /* Online status */ ?>
-      <?php if (!empty($online_status)): ?>
-        <div class="author-pane-line <?php print $online_status_class ?>">
-           <?php print $online_status; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Last active */ ?>
-      <?php if (!empty($last_active)): ?>
-        <div class="author-pane-line">
-           <span class="author-pane-label"><?php print t('Last seen'); ?>:</span> <?php print t('!time ago', array('!time' => $last_active)); ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* User title */ ?>
-      <?php if (!empty($user_title)): ?>
-        <div class="author-pane-line author-title">
-          <span class="author-pane-label"><?php print t('Title'); ?>:</span> <?php print $user_title; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* User badges */ ?>
-      <?php if (!empty($user_badges)): ?>
-        <div class="author-pane-line author-badges">
-          <?php print $user_badges; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Joined */ ?>
-      <?php if (!empty($joined)): ?>
-        <div class="author-pane-line author-joined">
-          <span class="author-pane-label"><?php print t('Joined'); ?>:</span> <?php print $joined; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Posts */ ?>
-      <?php if (isset($user_stats_posts)): ?>
-        <div class="author-pane-line author-posts">
-          <span class="author-pane-label"><?php print t('Posts'); ?>:</span> <?php print $user_stats_posts; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Points */ ?>
-      <?php if (isset($userpoints_points)): ?>
-        <div class="author-pane-line author-points">
-          <span class="author-pane-label"><?php print t('!Points', userpoints_translation()); ?></span>: <?php print $userpoints_points; ?>
-        </div>
-      <?php endif; ?>
     </div>
-
-    <?php /* Contact section */ ?>
-    <div class="author-pane-section author-pane-contact">
-      <?php /* Contact / Email */ ?>
-      <?php if (!empty($contact)): ?>
-        <div class="author-pane-line author-pane-link-line author-contact">
-          <?php print $contact; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Private message */ ?>
-      <?php if (!empty($privatemsg)): ?>
-        <div class="author-pane-line author-pane-link-line author-privatemsg">
-          <?php print $privatemsg; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* User relationships */ ?>
-      <?php if (!empty($user_relationships)): ?>
-        <div class="author-pane-line author-pane-link-line author-user-relationship">
-          <?php print $user_relationships; ?>
-        </div>
-      <?php endif; ?>
-
-      <?php /* Flag friend */ ?>
-      <?php if (!empty($flag_friend)): ?>
-        <div class="author-pane-line author-pane-link-line author-flag-friend">
-          <?php print $flag_friend; ?>
-        </div>
-      <?php endif; ?>
-    </div>
-
-    <?php /* Admin section */ ?>
-    <div class="author-pane-section author-pane-admin">
-      <?php /* IP */ ?>
-      <?php if (!empty($user_stats_ip)): ?>
-        <div class="author-pane-line author-ip">
-          <span class="author-pane-label"><?php print t('IP'); ?>:</span> <?php print $user_stats_ip; ?>
-        </div>
-      <?php endif; ?>
-
-     <?php /* Fasttoggle block */ ?>
-     <?php if (!empty($fasttoggle_block_author)): ?>
-        <div class="author-fasttoggle-block"><?php print $fasttoggle_block_author; ?></div>
-      <?php endif; ?>
-    </div>
-  </div>
+    <ul class="list-group small">
+        <?php /* User picture / avatar (has div in variable) */ ?>
+        <?php if (!empty($picture)): ?>
+        <li class="list-group-item">
+            <!-- need to add to user picture class class="center-block img-circle" -->
+            <div class="text-center">
+                <?php print $picture; ?>
+            </div>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($online_status)): ?>
+        <li class="list-group-item">
+            <?php print $online_status; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($last_active)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('Last seen'); ?>:</span> <?php print t('!time ago', array('!time' => $last_active)); ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($user_title)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('Title'); ?>:</span> <?php print $user_title; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($user_badges)): ?>
+        <li class="list-group-item">
+            <?php print $user_badges; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($joined)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('Joined'); ?>:</span> <?php print $joined; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (isset($user_stats_posts)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('Posts'); ?>:</span> <?php print $user_stats_posts; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (isset($userpoints_points)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('!Points', userpoints_translation()); ?></span>: <?php print $userpoints_points; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($contact)): ?>
+        <li class="list-group-item">
+            <?php print $contact; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($privatemsg)): ?>
+        <li class="list-group-item">
+            <?php print $privatemsg; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($user_relationships)): ?>
+        <li class="list-group-item">
+            <?php print $user_relationships; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($flag_friend)): ?>
+        <li class="list-group-item">
+            <?php print $flag_friend; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($user_stats_ip)): ?>
+        <li class="list-group-item">
+            <span class="author-pane-label"><?php print t('IP'); ?>:</span> <?php print $user_stats_ip; ?>
+        </li>
+        <?php endif; ?>
+        <?php if (!empty($fasttoggle_block_author)): ?>
+        <li class="list-group-item">
+            <?php print $fasttoggle_block_author; ?>
+        </li>
+        <?php endif; ?>
+    </ul>
 </div>

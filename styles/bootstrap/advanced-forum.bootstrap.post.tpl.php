@@ -54,17 +54,14 @@
   </div>
 
   <div class="panel-body">
-    <div class="media">
+
       <?php if (!empty($author_pane)): ?>
-        <div class="pull-left">
+        <div class="col-md-2">
           <?php print $author_pane; ?>
         </div>
       <?php endif; ?>
 
-      <div class="media-body">
-        <?php if (!empty($title)): ?>
-          <h4 class="media-heading"><?php print $title ?></h4>
-        <?php endif; ?>
+      <div class="col-md-10">
 
         <?php
           // We hide the comments and links now so that we can render them later.
@@ -83,7 +80,7 @@
           <div class="author-signature"><?php print $signature ?></div>
         <?php endif; ?>
       </div>
-    </div>
+
   </div>
 
   <div class="panel-footer text-right">
