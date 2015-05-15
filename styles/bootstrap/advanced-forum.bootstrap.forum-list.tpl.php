@@ -84,7 +84,7 @@
             <tr id="forum-<?php print $item_id; ?>" class="forum-row <?php print $item->zebra; ?> container-<?php print $item_id; ?>-child">
           <?php endif; ?>
 
-          <td>
+          <td class="text-center">
             <span style="font-size: 1.5em;" class="glyphicon <?php print $item->new_topics ? 'glyphicon-star' : 'glyphicon-star-empty' ?>"></span>
           </td>
 
