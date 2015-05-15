@@ -84,7 +84,12 @@
   </div>
 
   <div class="panel-footer text-right">
-    <?php print render($content['links']); ?>
+    <div class="btn-group text-left">
+      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+       <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Operations
+      </button>
+      <?php print render($content['links']); ?>
+    </div>
   </div>
 </div>
 

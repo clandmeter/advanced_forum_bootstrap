@@ -37,3 +37,10 @@ function advanced_forum_bootstrap_preprocess_forum_icon(&$vars) {
       break;
   }
 }
+
+function advanced_forum_bootstrap_preprocess_links(&$variables) {
+    // remove inline class and set dropdown
+    $variables['attributes']['class'] = array_diff($variables['attributes']['class'], array('inline'));
+    $variables['attributes']['class'][] = 'dropdown-menu';
+    $variables['attributes']['role'][] = 'menu';
+}
